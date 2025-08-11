@@ -93,8 +93,6 @@ label start:
     dad "I certainly will! You can count on me!"
     
     scene bg pizzaplace with fadeslow
-    
-    show 
 
     # This ends the game.
 
