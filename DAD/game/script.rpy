@@ -20,25 +20,34 @@ define nimi = Character("Hostess Nimi Nightmare")
 define radio = Character("Mysterious Radio Voice")
 define bao = Character("Rocket Scientist Bao the Whale")
 define dragoonengi = Character("Dragoon Engineer")
-define neuro = Character("President Neuro-Sama")
+define neuro = Character("President Neuro-sama")
 define dragoonassist = Character("Dragoon Assistant")
 
 #Transition and Transform definitions
+
+define charfade = Dissolve(1.5)
 
 define fadeslow = Fade(1.0, 2.0, 1.0)
 
 transform centre:
     xalign 0.5
-    yalign 0.3 
+    yalign 0.5
+    zoom 0.75
     
 transform slightleft:
-    xalign 0.05
+    xalign 0.10
     yalign 0.5
-    zoom 0.80
+    zoom 0.75
     
 transform slightright:
     xalign 0.90
     yalign 0.5
+    zoom 0.75
+    
+transform dokicentre:
+    xalign 0.5
+    yalign 0.3
+    zoom 1.1
 
 # The game starts here.
 label start:
@@ -51,42 +60,41 @@ label start:
     dad "{i}It was a beautiful morning in Dokiville.{p}The sun was shining.{p}The birds were chirping."
     dad "{i}The smell of freshly baked dog treats wafted through the streets."
     
-    show doki smile at centre
+    show doki smile at dokicentre
     
     dad "{i}As Dokiville slowly awakens to another beautiful day, Dokibird prepares to start her stream."
     
-    show doki happy at centre
+    show doki happy at dokicentre
 
-    doki "Hello Everybody!{p}Welcome to today\'s stream!"
+    doki "Hello everybody!{p}Welcome to today\'s stream!"
     
     scene bg kitchen with fade
      
     show dad smile at centre
     
-    dad "{i}As Doki is streaming, I hear the familiar sound of the postman\'s motorbike rolling up to our mailbox."
-    
     play sound "motorbike.mp3"
     
-    hide dad smile at centre with Dissolve(2.0)
+    dad "{i}As Doki is streaming, I hear the familiar sound of the postman\'s motorbike rolling up to our mailbox."
     
-    show dad newspaper with Dissolve(2.0)
+    hide dad smile at centre with charfade
+    pause 1.5
+    show dad newspaper at centre with charfade
     
     dad "{i}I returned with the newspaper and placed it down on the kitchen table."
     dad "{i}As I eat breakfast I look at the cover of the newspaper, and I notice something. {p}It\'s a job advertisement for Dooby\'s Pizza Express."
     dad "Hmmm... with Doki streaming all the time I don\'t have much to do, working at a pizza place sounds like fun."
-    
-    hide dad newspaper with Dissolve(2.5)
 
     ############################# ACT 2 - Dooby's Pizza Express #####################################
 
     scene bg pizzaplace with fadeslow
     
-    show dad smile with Dissolve(2.0)
+    show dad smile at centre with charfade
     
-    dad "{i}Somehow i got the interview that morning so i headed over, everyone was patting me it was like they never saw a dog before!"
+    dad "{i}Somehow I got the interview that morning so I headed over. Everyone was patting me, it was like they never saw a dog before!"
   
-    show dad smile at slightleft with Dissolve(2.0) 
-    show dooby happy at slightright with Dissolve(2.0) 
+    show dad smile: 
+        linear 0.5 xpos 0.20
+    show dooby happy at slightright with charfade 
   
     dooby "Well, I\'m very impressed with your resume, I\'m happy to offer you a position at my pizza place!"
     dooby "I\'m glad you showed up today, there haven\'t been many good candidates today."
@@ -110,11 +118,11 @@ label start:
     
     scene bg pizzaplace with fadeslow
     
-    show mint happy at slightright with Dissolve(2.0)
+    show mint happy at slightright with charfade
     
     mint "Thank you for coming! Hope you enjoyed your food! Come back soon!"
     
-    show dad smile at slightleft with Dissolve(1.0)
+    show dad smile at slightleft with charfade
     
     mint "Oh wow D.A.D. that was our 100th customer of the day, that was a lot of work!"
     mint "I\'m glad you are here D.A.D, without you this would have been exhausting!"
@@ -143,11 +151,11 @@ label start:
 
     scene bg office with fadeslow
     
-    show dad worried at slightleft with Dissolve(2.0)
+    show dad worried at slightleft with charfade
     
     dad "{i}I enter the office worried I did something wrong."
     
-    show dooby happy at slightright with Dissolve(2.0)
+    show dooby happy at slightright with charfade
     
     dooby "No need to worry about anything you haven\'t done anything wrong, in fact you’ve done better than ever!"
     dooby "I want to promote you to manager!"
@@ -179,11 +187,11 @@ label start:
     hide dooby with Dissolve(2.5)
     show dad happy
     
-    dad "Huh? Ok I guess I\'m in charge now. Better get to it"
+    dad "Huh? Ok I guess I\'m in charge now. Better get to it!"
     
     scene bg office with fadeslow
     
-    show dad suitsmile at slightleft with Dissolve(2.0)
+    show dad suitsmile at slightleft with charfade
     
     dad "{i}I made myself comfortable clicked around the computer and I ended up scrolling through LeashedIn."
     dad "{i}A notification reminder popped up for a management meeting in Xoom starting in a few minutes."
@@ -191,7 +199,7 @@ label start:
     
     play sound "xoomjoin.mp3"
     
-    show chibi happy at slightright with Dissolve(0.5)
+    show chibi happy at slightright with charfade
     
     chibi "Thank you everyone for coming to our financial meeting for this quarter."
     chibi "Before we get started, I would like to extend a warm welcome to D.A.D. who has just joined the team recently and also congratulations on your recent promotion."
@@ -236,9 +244,8 @@ label start:
     show chibi happy
     
     chibi "Woof indeed! In other news, we are set for a 4\% salary increase to keep ahead of inflation as well as bonuses to be handed out to all employees."
+    play sound "clapmediumwithwoof.mp3"
     chibi "So I would like to say well done to everyone, you have all done really well!"
-
-    play sound "applauseandwoof.mp3"
     
     chibi "Additionally, since our new equipment arrived our equipment downtime has made the coffee machines much more reliable which is good."
     
@@ -328,9 +335,11 @@ label start:
     
     scene bg office with fadeslow
     
-    show chibi happy with Dissolve(2.0)
+    show chibi happy at slightright with charfade
     
     chibi "And that concludes the meeting, I must say you were extremely professional D.A.D., we are very lucky to have such a wonderful dog like you on our team."
+
+    show dad suitsmile at slightleft with charfade 
 
     dad "{i}I just nod in agreement pretending to know what i’m doing."
     
@@ -355,15 +364,15 @@ label start:
     
     scene bg progameoutside with fadeslow
     
-    show dad smile with Dissolve(2.0)
+    show dad smile at slightleft with charfade
     
     dad "{i}I get to the tournament a few minutes before the event started. I\'m not sure who\'s playing or even what game they\'re playing, but I don\'t know what to do as a manager, so I guess I\'ll do this."
     dad "{i}I figure I should get into the spirit of thing so, I pull on the free player jersey I got in my mystery box at the merch counter."
     dad "{i}It looks a little different to everyone else\'s... hmmm I guess that's why it\'s a \"mystery\" box."
     
-    show lucy stressedtalking
+    show lucy stressedtalking at slightright  with charfade
     
-    lucy "Where the fuck were you?! We'\ve been looking all over for you! You\'re meant to be playing in a few minutes!"
+    lucy "{size=+15}Where the fuck were you?!{/size} We\'ve been looking all over for you! You\'re meant to be playing in a few minutes!"
     
     show lucy stressed
     show dad worriedtalking
@@ -372,29 +381,31 @@ label start:
     dad "{i}Before i’m able to finish my sentence she drags me by my collar into the arena."
     dad "Wait a secon-"
     
-    lucy "You wait a second, you gotta have some balls to show up so late in the finals! Do you know how long I\'ve been running around looking for you? People are waiting to see you live!"
+    lucy "{size=+15}You {/size}wait a second, you gotta have some balls to show up so late in the finals! Do you know how long I\'ve been running around looking for you? {size=+15}People are waiting to see you live!"
 
     dad "{i}I realise that there\'s no arguing with this woman, so I just go along with her, as my attempt to break away fails. {w} I try to follow as best I can."
     
     scene bg progameinside with fadeslow
     
+    play sound "clapbig1.mp3"
+    
     comm1 "{cps=100}Let me tell you something Mick, i don\'t know where this dog came from but he\'s won every fight solo!"
     
     comm2 "{cps=100}A better question is, Mike, why he didn\'t have a team beside him? Does he not have a team? Is he here by mistake? But at the end of the day it doesn\'t really matter because he\'s DOMINATED the competition every, single, fight!"
 
-    dad "{i}I had no clue what the commentators were talking about, I\'ve never played the game before, but I guess I'm a natural. Maybe all those hours of watching Doki play helped me somehow."
+    dad "{i}I have no clue what the commentators are talking about, I\'ve never played the game before, but I guess I'm a natural. Maybe all those hours of watching Doki play helped me somehow."
     
-    comm1 "Well regardless of what happened, D.A.D. is now going straight to the international competition! Let\'s have a big round of applause!"
+    comm1 "{cps=100}Well regardless of what happened, D.A.D. is now going straight to the international competition! Let\'s have a big round of applause!"
     
-    play sound "applause.mp3"
+    play sound "clapbig2.mp3"
     
     scene bg plane with fadeslow
     
-    show dad smile
+    show dad smile at slightleft with charfade
     
     dad "{i}I end up on a plane to the international tournament, I didn\'t particularly want to play more, but anything beats the boredom of doing nothing at home. At least it\'s only a short flight."
     
-    show nimi smile
+    show nimi smile at slightright with charfade
        
     dad "{i}Some time after the flight starts, a flight attendant comes over."
     
@@ -412,15 +423,17 @@ label start:
     
     nimi "No worries, enjoy your flight!"
     
-    show nimi smile
-    
+    show nimi smile:
+        linear 2.8 xpos -0.2
+
     dad "{i}She smiles at me and walks off."
+    dad "{i}I watch as she walks into the captains quarters to see if they want anything, then run back out looking panicked but still remaining calm."
     
-    dad "{i}I watch as she walks into the captains quarters to see if they want anything, then run back out looking panicked but still remaining calm." 
+    show nimi worriedtalking:
+        linear 1.3 xpos 0.9
+     
     dad "{i}As I watch and strain my neck to see what was happening, I couldn\'t help but feel that the plane was in a slight diving bank, but as we only left the airport a short while ago we couldn\'t have already begun descending for landing."
-    
-    show nimi worriedtalking
-    
+
     nimi "Does anyone know how to fly a plane? Not to panic anyone, but both of the pilots have passed out and it's my first day!"
     
     show nimi worried
@@ -442,13 +455,16 @@ label start:
     
     dad "I've played my fair share of flight simulators."
     
-    show dadworried
+    show dad worried
     
     dad "{i}Shimmying past her in the aisle, I make my way towards the cockpit."
     
     scene bg planecockpit with fadeslow
+    
+    show rin sleep at slightleft
+    show lime sleep at slightright
 
-    show dadworried
+    show dad worried at centre with charfade
 
     dad "{i}I enter the cockpit and see two women in pilot uniform passed out, and… a snail sitting on the shoulder of one of them?"
     dad "{i}I jump on the lap of the woman who appears to be the main pilot and look at the controls in front of me."
@@ -457,13 +473,16 @@ label start:
     
     dad "Oh my gosh, this is way more complicated than mouse and keyboard!"
 
-    show dadworried
+    show dad worried
 
     dad "{i}I start to panic, but then I see a big red button on the yolk."
     dad "{i}I don\'t know what it does but, it\'s sure to do something."
     dad "{i}So I boop it. {w}I feel the plane begin to level out of its dive."
     
-    show nimi happytalking
+    show nimi happytalking behind dad with charfade :
+        xalign 0.7
+        yalign 0.5
+        zoom 0.75
     
     nimi "Oh wow! Nicely done D.A.D.!"
     
@@ -471,11 +490,15 @@ label start:
     
     nimi "Well D.A.D., you keep doing what you’re doing here, I need to go back to my station in case any passengers need help. I\'m not sure why none of them have woken up at all."
     
-    hide nimi happytalking with Dissolve(2.0)
+    hide nimi happytalking with charfade
     
     dad "{i}I just nod, eyes fixed on what's I think is the plane\'s spirit level, and keeping it steady.  Occasionally, I check my position on the map on one of the screens and follow the big red line, hoping it\'s taking us to our destination."
 
     scene bg planecockpit with fadeslow
+    
+    show dad worried at centre
+    show rin sleep at slightleft
+    show lime sleep at slightright
 
     dad "{i}After what seemed like ages, I suddenly realise I don\'t remember how to land a plane and the pilots are still passed out."
     
@@ -562,9 +585,13 @@ label start:
     
     radio "Ok, I\'ll walk you through how to slow down the plane and activate all the stuff it needs to land."
     
-    scene bg explain with fadeslow 
+    scene bg explain with fade
+    pause 2.0
+    scene bg planecockpit with fade 
     
-    show dad worriedheadsettalking
+    show dad worriedheadsettalking at centre
+    show rin sleep at slightleft
+    show lime sleep at slightright
     
     dad "Wait, I see the airport in the distance I think! There's a bunch of lights."
     
@@ -605,136 +632,263 @@ label start:
     
     scene bg planetarmac with fadeslow
     
-    show bao happytalking with Dissolve(2.0)
-    show dad smile with Dissolve(2.0)
+    show bao happy at slightright
+    show dad smile at slightleft 
+    with charfade
     
     bao "I just saw what happened - that was amazing! How would you like a tour of NASA and to watch the rocket launch this afternoon?"
     
     show dad happy
+    show bao smile
     
     dad "Sure, why not? Sounds cool."
+    
+    show bao happy
+    show dad smile
     
     bao "Awesome! Let’s go now!"
     
     scene bg nasarocket with fadeslow
     
+    show bao happy at slightright
+    show dad smile at slightleft
+    with charfade
+    
     bao "Here we are! Behold… The Doki 5 rocket!" 
+    
+    show dad happy
+    show bao smile
     
     dad "Woah, that\'s pretty tall!"
     
+    show dad smile
+    show bao happy
+    
     bao "Yup! The tallest rocket we\'ve ever made. Doki 5 will soon be on its way to the outer planets of the Doki Planet System."
     
+    show dad happy
+    show bao smile
+    
     dad "I heard about something called planets before, sounds cool."
+ 
+    show dad smile
+    show bao happy
     
     bao "Truly a once in forever opportunity, {w}the outer planets will be perfectly aligned so we can visit them all in one go. {w}The spacecraft in Doki 5\'s cargo compartment is our most advanced yet."
     bao "It will help us gain a lot of data on the outer planets. {w}What makes up their atmospheres, if there\'s water, stuff about their moons and a bunch of other information."
+
+    show dad happy
+    show bao smile
     
     dad "Sounds pretty complicated and expensive."
+
+    show dad smile
+    show bao happy
     
     bao "It is, but the information and knowledge we stand to learn from this mission is priceless."
+
+    show dad happy
+    show bao smile
     
     dad "This whole mission sounds fascinating, I am so excited to be able to watch the rocket launch in person!"
+
+    show dad smile
+    show bao happy
     
     bao "Let’s get to the viewing platform, the rocket will launch in about 10 minutes, we gotta be quick!"
     
-    scene nasaplatform with fade
+    scene bg nasaplatform with fade
     
-    show dragoonegi talking
+    show dragoonengi talking at centre with charfade
     
     dragoonengi "😬⛔💨🥵👎🙅‍♂️🚀"
     
+    show bao worriedtalking at slightright
+    show dad worried at slightleft
+    with charfade
+    show dragoonengi worried
+    
     bao "What\'s that? There\'s a blockage in the vent which is preventing the launch?"
     
+    show dragoonengi talking
+    show bao worried
+    
     dragoonengi "😨⌛🚀⏰🪟🛑📅‼️"
+
+    show dragoonengi worried
+    show bao worriedtalking
     
     bao "You\'re right! We don\'t have a lot of time before the launch and we can\'t afford to delay, it would set us back months! We could miss our once in forever launch window!"
+
+    show dragoonengi talking
+    show bao worried
     
     dragoonengi "😱🔥💣‍🚀️💥💰💸💀"
+
+    show dragoonengi worried
+    show bao worriedtalking
     
     bao "WAIT WHAT!? Oh crap, that rocket costs billions! We don’t even have the budget to build another rocket!"
         
     dad "{i}I don\'t know a lot about those pointy things, but I do know that an explosion probably wouldn\'t be too good."
+
+    show dragoonengi worried
+    show bao worriedtalking
     
     bao "How do we fix this? We can\'t lose everything!"
-        
+
+    show dragoonengi talking
+    show bao worried
+            
     dragoonengi "🤏🐕🛠️🐶🪛🚀🤞"
     
+    show dragoonengi worried
+    show bao worriedtalking
+        
     bao "Oh! You’re saying that someone like a small dog could fit through and fix the problem?"
+
+    show dad worriedtalking
+    show bao worried
     
     dad "Say less fam. I got this."
     
-    hide dad worriedtalking with Dissolve(2.5)
+    hide dad with Dissolve(2.5)
     
-    show dad happy
+    pause 1.5
+    
+    show dad happy at slightleft with charfade
     
     dad "I think I fixed the problem, there was a giant tomato blocking the critical ventilation pathway."
+
+    show dragoonengi talking
+    show dad smile
     
     dragoonengi "🤔🍅⁉️🤯"
     
+    show dragoonengi worried
+    show bao worriedtalking
+    
     bao "How in the name of Dokiville did that get there?"
+    
+    show dad happy
+    show bao smile
     
     dad "I don\'t know, pretty tasty though."
     
+    show bao happy
+    show dad smile
+    
     bao "Well you just saved the entire rocket launch! You saved everything! The rocket launch can go on!"
+    
+    show dad happy
+    show bao smile
     
     dad "Oh cool! Nice."
     
-    hide dragoonengi with Dissolve(2.0)
-    hide bao with Dissolve(2.0)
+    hide dragoonengi with charfade
+    hide bao with charfade
     
-    dad "{i}The rocket launch was beautiful and went without any further hiccups, the afternoon sun rays forming an impressive backdrop. (Trust us.)"
+    dad "{i}The rocket launch was beautiful and went without any further hiccups, the afternoon sun rays forming an impressive backdrop. (Source: Trust us.)"
 
-    show nuero with Dissolve(2.0)
+    show neuro happy at slightright with charfade
     
-    neuro "Hello, I am Neuro-Sama, President of Dokiland. I saw you save this crucial mission, and I’d like to thank you officially on behalf of everyone in Dokiland. Please step into this limo."
+    neuro "Hello, I am Neuro-sama, President of Dokiland. I saw you save this crucial mission, and I’d like to thank you officially with a ceremony the Beige-House on behalf of everyone in Dokiland. Please step into this limo."
     
     scene bg beigehouse with fadeslow
     
+    play sound "bigclap2.mp3"
+    
+    show neuro happy at slightright
+    show dad suit at slightleft with charfade
+
     neuro "On behalf of this great country and under the powers given to me as President of Dokiland, I bestow upon you the Medal of Honour for your small size… Ahem, bravery and selfless service to our nation."
     
-    play sound "applause.mp3"
-    
     scene bg beigehouse with fadeslow
+    
+    show neuro happy at slightright
+    show dad smile at slightleft with charfade
     
     neuro "Thank you again for your incredible work."
     
+    show neuro smile
+    show dad happy
+    
     dad "No worries, was pretty fun, and the tomato was kind of tasty too."
+    
+    show neuro happy
+    show dad smile
     
     neuro "I would like to ask you to lead my new department \"Management of Memology\"."
     
+    show neuro smile
+    show dad happy
+    
     dad "Cool. \"M.O.M. Department\" sounds like fun."
+    
+    show neuro happy
+    show dad smile
     
     neuro "Great, here\'s your team please get to work right away."
     
+    show neuro smile
+    show dad happy
+        
     dad "No sweat."
 
     scene bg boardroom
     
-    show dragoonassist talking
-    show dadworried
+    show dragoonassist talking at slightright
+    show dad worried at slightleft
+    with charfade
     
     dragoonassist "🖼️💻😡⚠⚔️️"
     
+    show dad worriedtalking
+    show dragoonassist worried
+    
     dad "Uh oh. That\'s very not good."
+    
+    show dragoonassist talking
+    show dad worried
     
     dragoonassist "🤬🪖💢🧑‍💻☢️"
     
-    dad "I didn\'t think posting that meme would cause this to happen! Everyone loves that meme!  Tell the nuclear command not to launch the nukes! I repeat, DO NOT LAUNCH THE NUKES…"
+    show dad worriedtalking
+    show dragoonassist worried
+    
+    dad "I didn\'t think posting that meme would cause this to happen! {w}Everyone loves that meme!  {w}Tell the nuclear command not to launch the nukes! {w}I repeat, DO NOT LAUNCH THE NUKES…"
+    
+    show dragoonassist talking
+    show dad worried
     
     dragoonassist "⌛🫣☢️💥🫠☠️"
     
-    dad "I KNOW, I KNOW! Let me think! Oh gosh how do we solve this… Wait. I know! I’ll call Doki for help."
+    show dad worriedtalking
+    show dragoonassist worried
+    
+    dad "I KNOW, I KNOW! {w}Let me think! Oh gosh how do we solve this… {w}Wait. {p}I know! I’ll call Doki for help."
+    
+    show dad worried
 
     play sound "phone.mp3"
     
-    show doki worriedtalking
+    show doki worriedtalking at dokicentre
     
-    doki "DAD??? Where are you??? What's going on??? How are you calling me???"
+    doki "D.A.D.??? {w}Where are you??? {w}What\'s going on??? {w}Why are you calling me from the other room...{w} How are you calling me???"
 
-    dad "Well actually I’m at the Beige-house, and there’s a bit of a memergency. Check your feed."
+    show doki worried
+    show dad worriedtalking
+
+    dad "Well actually I’m at the Beige House, and there’s a bit of a memergency. Check your feed."
+    
+    show doki worriedtalking
+    show dad worried
     
     doki "WHAT THE FUCK DAD. HOW DID THIS HAPPEN? WHAT EVEN… HOW… WHAT… WHY… PLEASE EXPLAIN???"
-    
+
+    show doki worried
+    show dad worriedtalking
+
     dad "Well its a long story… {p}It all started when…"
     
     jump start

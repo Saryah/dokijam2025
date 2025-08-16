@@ -18,7 +18,7 @@ define config.name = _("DAD")
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## The version of the game.
@@ -55,7 +55,7 @@ define config.default_music_volume = 0.5
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
 
-# define config.sample_sound = "sample-sound.ogg"
+define config.sample_sound = "dog1.mp3"
 # define config.sample_voice = "sample-voice.ogg"
 
 
