@@ -16,7 +16,12 @@ define everyone = Character("Everyone")
 define lucy = Character("Coordinator Lucy Pyre")
 define comm1 = Character("Commentator Mike")
 define comm2 = Character("Commentator Mick")
-define nimi = Character("Hostess Nightmare Nimi")
+define nimi = Character("Hostess Nimi Nightmare")
+define radio = Character("Mysterious Radio Voice")
+define bao = Character("Rocket Scientist Bao the Whale")
+define dragoonengi = Character("Dragoon Engineer")
+define neuro = Character("President Neuro-Sama")
+define dragoonassist = Character("Dragoon Assistant")
 
 #Transition and Transform definitions
 
@@ -36,8 +41,8 @@ transform slightright:
     yalign 0.5
 
 # The game starts here.
-
 label start:
+    play music "Vtuber_game_with_fake_whale_v2.mp3" loop fadein 1.0 fadeout 1.0
 
     ############################# ACT 1 - Doki's House #####################################
 
@@ -136,7 +141,7 @@ label start:
     
     ############################# ACT 3 - Pizza Express Management #####################################
 
-    scene office with fadeslow
+    scene bg office with fadeslow
     
     show dad worried at slightleft with Dissolve(2.0)
     
@@ -176,13 +181,13 @@ label start:
     
     dad "Huh? Ok I guess I\'m in charge now. Better get to it"
     
-    scene office with fadeslow
+    scene bg office with fadeslow
     
     show dad suitsmile at slightleft with Dissolve(2.0)
     
     dad "{i}I made myself comfortable clicked around the computer and I ended up scrolling through LeashedIn."
     dad "{i}A notification reminder popped up for a management meeting in Xoom starting in a few minutes."
-    dad "{i}It was pretty difficult to use the human mouse with my paws but I got it figured out in the end."
+    dad "{i}It\'s normally pretty difficult for me to use a human mouse, but I took out my pawdapter I always carry with me, and attached it, joining the meeting without issue."
     
     play sound "xoomjoin.mp3"
     
@@ -321,7 +326,7 @@ label start:
     
     chibi "Alright, moving on. If that is all, let’s proceed with the rest of the meeting."
     
-    scene office with fadeslow
+    scene bg office with fadeslow
     
     show chibi happy with Dissolve(2.0)
     
@@ -348,7 +353,7 @@ label start:
     
     ############################# ACT 4 - Pro Gaming Tournament #####################################
     
-    scene progameoutside with fadeslow
+    scene bg progameoutside with fadeslow
     
     show dad smile with Dissolve(2.0)
     
@@ -371,7 +376,7 @@ label start:
 
     dad "{i}I realise that there\'s no arguing with this woman, so I just go along with her, as my attempt to break away fails. {w} I try to follow as best I can."
     
-    scene progameinside with fadeslow
+    scene bg progameinside with fadeslow
     
     comm1 "{cps=100}Let me tell you something Mick, i don\'t know where this dog came from but he\'s won every fight solo!"
     
@@ -383,11 +388,11 @@ label start:
     
     play sound "applause.mp3"
     
-    scene plane with fadeslow
+    scene bg plane with fadeslow
     
     show dad smile
     
-    dad "{i}I end up on a plane to the international tournament, I didn\'t particularly want to play more, but anything beats the boredom doing nothing at home. At least it\'s only a short flight."
+    dad "{i}I end up on a plane to the international tournament, I didn\'t particularly want to play more, but anything beats the boredom of doing nothing at home. At least it\'s only a short flight."
     
     show nimi smile
        
@@ -397,8 +402,342 @@ label start:
     
     nimi "Hi there, would you like anything today?"
     
+    show dad happy
+    show nimi smile
     
+    dad "No thanks, I'\m all good."
     
+    show dad smile
+    show nimi happy
+    
+    nimi "No worries, enjoy your flight!"
+    
+    show nimi smile
+    
+    dad "{i}She smiles at me and walks off."
+    
+    dad "{i}I watch as she walks into the captains quarters to see if they want anything, then run back out looking panicked but still remaining calm." 
+    dad "{i}As I watch and strain my neck to see what was happening, I couldn\'t help but feel that the plane was in a slight diving bank, but as we only left the airport a short while ago we couldn\'t have already begun descending for landing."
+    
+    show nimi worriedtalking
+    
+    nimi "Does anyone know how to fly a plane? Not to panic anyone, but both of the pilots have passed out and it's my first day!"
+    
+    show nimi worried
+    
+    dad "{i}I look around to see if anyone responds, but it seems that everyone else is in deep sleep with no sign of waking up."
+    dad "{i}I’ve played flight simulator while Doki was away so I think I probably know how to, besides nobody else seems to be awake to take over anyway."
+    
+    show dad worriedtalking
+    
+    dad "{i}Uhh hi, I might be able to help."
+    
+    show dad worried
+    show nimi worriedtalking
+    
+    nimi "But… But… How… You\'re a dog? How can you fly…?"
+    
+    show dad worriedtalking
+    show nimi worried
+    
+    dad "I've played my fair share of flight simulators."
+    
+    show dadworried
+    
+    dad "{i}Shimmying past her in the aisle, I make my way towards the cockpit."
+    
+    scene bg planecockpit with fadeslow
+
+    show dadworried
+
+    dad "{i}I enter the cockpit and see two women in pilot uniform passed out, and… a snail sitting on the shoulder of one of them?"
+    dad "{i}I jump on the lap of the woman who appears to be the main pilot and look at the controls in front of me."
+    
+    show dad worriedtalking
+    
+    dad "Oh my gosh, this is way more complicated than mouse and keyboard!"
+
+    show dadworried
+
+    dad "{i}I start to panic, but then I see a big red button on the yolk."
+    dad "{i}I don\'t know what it does but, it\'s sure to do something."
+    dad "{i}So I boop it. {w}I feel the plane begin to level out of its dive."
+    
+    show nimi happytalking
+    
+    nimi "Oh wow! Nicely done D.A.D.!"
+    
+    dad "{i}After I pressed the button I grabbed the controls and tried to steer. I seem to be keeping the plane in the air at the very least so I keep doing that."
+    
+    nimi "Well D.A.D., you keep doing what you’re doing here, I need to go back to my station in case any passengers need help. I\'m not sure why none of them have woken up at all."
+    
+    hide nimi happytalking with Dissolve(2.0)
+    
+    dad "{i}I just nod, eyes fixed on what's I think is the plane\'s spirit level, and keeping it steady.  Occasionally, I check my position on the map on one of the screens and follow the big red line, hoping it\'s taking us to our destination."
+
+    scene bg planecockpit with fadeslow
+
+    dad "{i}After what seemed like ages, I suddenly realise I don\'t remember how to land a plane and the pilots are still passed out."
+    
+    show dad worriedtalking
+    
+    dad "Oh dear! Oh dear! What do I do???"
+    
+    dad "{i}I hastily look around the cockpit again and notice that the two women are both wearing gaming headsets or something. {w}I\'ve seen Doki wear something like it in her streams so I pluck the thing off one of the women\'s head and put it on."
+    
+    show dad worriedheadset
+   
+    dad "{i} I immediately hear the very panicked voice of a human shouting into the mic."
+    
+    radio "DOKIWINGS FLIGHT 5248 COME IN. I REPEAT. DOKIWINGS FLIGHT 5248 COME IN. THIS IS AIR TRAFFIC CONTROL. PLEASE. IS ANYONE THERE."
+    
+    show dad worriedheadsettalking
+    
+    dad "Geez calm down, I’m here whats up? Whats an air trafficky controller thingy. Is that food?"
+    
+    show dad worriedheadset
+    
+    radio "CALM DOWN!? {w}YOU WERE DIVING TOWARDS THE GROUND EARLIER!!! {w}HOW CAN ANYONE REMAIN CALM IN THIS SITUATION??? {w}Thank god someone responded, I thought the plane was going to crash!!! {w}What in the name of Dokiville is going on???"
+
+    show dad worriedheadsettalking
+        
+    dad "Wellllll… the flying people passed out and I pressed some buttons and fiddled around with the stick thing and the plane flew itself! Fascinating stuff this all is, a lot more exciting than the simulator stuff on the computer."
+    
+    show dad worriedheadset
+    
+    radio "Wait, who are you??? What are you doing in the cockpit!? What do you want? Don\'t crash the plane!!!"
+    
+    show dad worriedheadsettalking
+    
+    dad "Chill out, I’m not gonna crash the plane. {w}I’m D.A.D, I’m a dog."
+    dad "I was on the plane and the food-serving human came around saying that there was an emergency because the flying people passed out and there was no one able to fly the plane because everyone else was asleep."
+    
+    show dad worriedheadset
+    
+    radio "W- w- w- what??? H- h- h- How? Y- you know what, forget I asked, do you know how to land the plane? The plane only has so much fuel and if you don\'t land soon, it\'ll crash and you\'ll all be pancakes!"
+    
+    show dad worriedheadsettalking
+    
+    dad "Ooh nom nom nom panacakes… *cough* wait… What do you mean fuel? I thought the plane just ran on plane energy or wind or something?"
+    
+    show dad worriedheadset
+    
+    radio "If you don\'t do something the plane is going to crash. So listen to me and listen carefully. I\'ll explain how to fly the plane. You said you\'ve been in a simulator before right?"
+    
+    show dad worriedheadsettalking
+    
+    dad "Uhhh a little bit I guess."
+    
+    show dad worriedheadset
+    
+    radio "So do you know how to use the autopilot feature and the flaps and throttle and all that stuff?"
+
+    show dad worriedheadsettalking
+
+    dad "Wut..."
+    
+    show dad worriedheadset
+    
+    radio "Well this is going to be difficult. Is the autopilot on? It should be a red button on the stick thing in front of you."
+    
+    show dad worriedheadsettalking
+    
+    dad "I think it is? I pressed it earlier and the plane just flew straight."
+    
+    show dad worriedheadset
+    
+    radio "Ok very good, I need you to find a knob labelled direction heading, {w}{cps=20}d-i-r-e-c-t-i-o-n h-e-a-d-i-n-g {cps=0}and turn it to 330 degrees. {w}It should be in front of you. I have you on radar, I\'ll vector you in."
+
+    show dad worriedheadsettalking
+
+    dad "The knobbly thing that I can barely turn with my paws?"
+    
+    radio "Yup, that’ll be it."
+    
+    show dad worriedheadsettalking
+
+    dad "Uhhh ok got it."
+    
+    show dad worriedheadset
+    
+    radio "Ok, I\'ll walk you through how to slow down the plane and activate all the stuff it needs to land."
+    
+    scene bg explain with fadeslow 
+    
+    show dad worriedheadsettalking
+    
+    dad "Wait, I see the airport in the distance I think! There's a bunch of lights."
+    
+    show dad worriedheadset
+    
+    radio "Alright good, you\'re doing really well D.A.D, I\'m proud of you. Let\'s bring this plane home."
+    
+    show dad worriedheadsettalking
+    
+    dad "Planes have homes?"
+    
+    show dad worriedheadset
+    
+    radio "Yep that\'s what an airport is basically. {w}Now you need to fully extend the flaps like we\'ve done before, and slow down the plane a bit more. {w}Keep on course descending for the runway."
+    
+    show dad worriedheadsettalking
+    
+    dad "Crap this is terrifying."
+    
+    show dad worriedheadset
+    
+    radio "You\'re doing good, keep focused."
+    radio "In a moment, just before the plane touches down I need you to pull back on the yolk slightly and then pull the throttle all the way back. {w}You need to flare to slow down the plane\'s descent otherwise you\'ll slam the plane into the ground."
+    
+    show dad worriedheadsettalking
+    
+    dad "Ok, I\'ve got this I think."
+    
+    show dad worriedheadset
+    
+    radio "You\'re nearly here, I\'ve got emergency services on standby."
+    
+    dad "{i}I manage to land the plane and we eventually come to a stop."
+    
+    show dad worriedheadset
+    
+    radio "Nice! That was an awesome landing, well done D.A.D.! You saved everyone and the plane! We\'re all cheering for you in the tower."
+    
+    scene bg planetarmac with fadeslow
+    
+    show bao happytalking with Dissolve(2.0)
+    show dad smile with Dissolve(2.0)
+    
+    bao "I just saw what happened - that was amazing! How would you like a tour of NASA and to watch the rocket launch this afternoon?"
+    
+    show dad happy
+    
+    dad "Sure, why not? Sounds cool."
+    
+    bao "Awesome! Let’s go now!"
+    
+    scene bg nasarocket with fadeslow
+    
+    bao "Here we are! Behold… The Doki 5 rocket!" 
+    
+    dad "Woah, that\'s pretty tall!"
+    
+    bao "Yup! The tallest rocket we\'ve ever made. Doki 5 will soon be on its way to the outer planets of the Doki Planet System."
+    
+    dad "I heard about something called planets before, sounds cool."
+    
+    bao "Truly a once in forever opportunity, {w}the outer planets will be perfectly aligned so we can visit them all in one go. {w}The spacecraft in Doki 5\'s cargo compartment is our most advanced yet."
+    bao "It will help us gain a lot of data on the outer planets. {w}What makes up their atmospheres, if there\'s water, stuff about their moons and a bunch of other information."
+    
+    dad "Sounds pretty complicated and expensive."
+    
+    bao "It is, but the information and knowledge we stand to learn from this mission is priceless."
+    
+    dad "This whole mission sounds fascinating, I am so excited to be able to watch the rocket launch in person!"
+    
+    bao "Let’s get to the viewing platform, the rocket will launch in about 10 minutes, we gotta be quick!"
+    
+    scene nasaplatform with fade
+    
+    show dragoonegi talking
+    
+    dragoonengi "😬⛔💨🥵👎🙅‍♂️🚀"
+    
+    bao "What\'s that? There\'s a blockage in the vent which is preventing the launch?"
+    
+    dragoonengi "😨⌛🚀⏰🪟🛑📅‼️"
+    
+    bao "You\'re right! We don\'t have a lot of time before the launch and we can\'t afford to delay, it would set us back months! We could miss our once in forever launch window!"
+    
+    dragoonengi "😱🔥💣‍🚀️💥💰💸💀"
+    
+    bao "WAIT WHAT!? Oh crap, that rocket costs billions! We don’t even have the budget to build another rocket!"
+        
+    dad "{i}I don\'t know a lot about those pointy things, but I do know that an explosion probably wouldn\'t be too good."
+    
+    bao "How do we fix this? We can\'t lose everything!"
+        
+    dragoonengi "🤏🐕🛠️🐶🪛🚀🤞"
+    
+    bao "Oh! You’re saying that someone like a small dog could fit through and fix the problem?"
+    
+    dad "Say less fam. I got this."
+    
+    hide dad worriedtalking with Dissolve(2.5)
+    
+    show dad happy
+    
+    dad "I think I fixed the problem, there was a giant tomato blocking the critical ventilation pathway."
+    
+    dragoonengi "🤔🍅⁉️🤯"
+    
+    bao "How in the name of Dokiville did that get there?"
+    
+    dad "I don\'t know, pretty tasty though."
+    
+    bao "Well you just saved the entire rocket launch! You saved everything! The rocket launch can go on!"
+    
+    dad "Oh cool! Nice."
+    
+    hide dragoonengi with Dissolve(2.0)
+    hide bao with Dissolve(2.0)
+    
+    dad "{i}The rocket launch was beautiful and went without any further hiccups, the afternoon sun rays forming an impressive backdrop. (Trust us.)"
+
+    show nuero with Dissolve(2.0)
+    
+    neuro "Hello, I am Neuro-Sama, President of Dokiland. I saw you save this crucial mission, and I’d like to thank you officially on behalf of everyone in Dokiland. Please step into this limo."
+    
+    scene bg beigehouse with fadeslow
+    
+    neuro "On behalf of this great country and under the powers given to me as President of Dokiland, I bestow upon you the Medal of Honour for your small size… Ahem, bravery and selfless service to our nation."
+    
+    play sound "applause.mp3"
+    
+    scene bg beigehouse with fadeslow
+    
+    neuro "Thank you again for your incredible work."
+    
+    dad "No worries, was pretty fun, and the tomato was kind of tasty too."
+    
+    neuro "I would like to ask you to lead my new department \"Management of Memology\"."
+    
+    dad "Cool. \"M.O.M. Department\" sounds like fun."
+    
+    neuro "Great, here\'s your team please get to work right away."
+    
+    dad "No sweat."
+
+    scene bg boardroom
+    
+    show dragoonassist talking
+    show dadworried
+    
+    dragoonassist "🖼️💻😡⚠⚔️️"
+    
+    dad "Uh oh. That\'s very not good."
+    
+    dragoonassist "🤬🪖💢🧑‍💻☢️"
+    
+    dad "I didn\'t think posting that meme would cause this to happen! Everyone loves that meme!  Tell the nuclear command not to launch the nukes! I repeat, DO NOT LAUNCH THE NUKES…"
+    
+    dragoonassist "⌛🫣☢️💥🫠☠️"
+    
+    dad "I KNOW, I KNOW! Let me think! Oh gosh how do we solve this… Wait. I know! I’ll call Doki for help."
+
+    play sound "phone.mp3"
+    
+    show doki worriedtalking
+    
+    doki "DAD??? Where are you??? What's going on??? How are you calling me???"
+
+    dad "Well actually I’m at the Beige-house, and there’s a bit of a memergency. Check your feed."
+    
+    doki "WHAT THE FUCK DAD. HOW DID THIS HAPPEN? WHAT EVEN… HOW… WHAT… WHY… PLEASE EXPLAIN???"
+    
+    dad "Well its a long story… {p}It all started when…"
+    
+    jump start
     
     # This ends the game.
 

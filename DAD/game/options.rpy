@@ -49,6 +49,7 @@ define build.name = "DAD"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
+define config.default_music_volume = 0.5
 
 
 ## To allow the user to play a test sound on the sound or voice channel,
@@ -62,7 +63,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "Vtuber_game_with_fake_whale_Menu.mp3"
 
 
 ## Transitions #################################################################
