@@ -2,26 +2,27 @@
 
 # Character definitions
 
-define dad = Character("D.A.D.")
-define doki = Character("Dokibird")
-define mint = Character("Maid Mint Fantôme")
-define dooby = Character("Manager Dooby")
-define chibi = Character("CEO Chibidoki")
-define saryah = Character("Labour Unit Saryah")
-define pancake = Character("Labour Unit Pancake")
-define bitsy = Character("Labour Unit Bitsy")
-define gil = Character("Labour Unit Gil")
-define nic = Character("Labour Unit Nic")
-define everyone = Character("Everyone")
-define lucy = Character("Coordinator Lucy Pyre")
-define comm1 = Character("Commentator Mike")
-define comm2 = Character("Commentator Mick")
-define nimi = Character("Hostess Nimi Nightmare")
-define radio = Character("Mysterious Radio Voice")
-define bao = Character("Rocket Scientist Bao the Whale")
-define dragoonengi = Character("Dragoon Engineer")
-define neuro = Character("President Neuro-sama")
-define dragoonassist = Character("Dragoon Assistant")
+define dad = Character("D.A.D.", who_color="#e9a30d")
+define doki = Character("Dokibird", who_color="#b6a9fe")
+define chat = Character("Chat", who_color="#FFFFFF")
+define mint = Character("Maid Mint Fantôme", who_color="#a2f4c5")
+define dooby = Character("Manager Dooby", who_color="#4e6f89")
+define chibi = Character("CEO Chibidoki", who_color="#e6aacf")
+define saryah = Character("Labour Unit Saryah", who_color="#05878a")
+define pancake = Character("Labour Unit Pancake", who_color="#E0BA1C")
+define bitsy = Character("Labour Unit Bitsy", who_color="#0013FF")
+define gil = Character("Labour Unit Gil", who_color="#c87763")
+define nic = Character("Labour Unit Nic", who_color="#F63A37")
+define everyone = Character("Everyone", who_color="#FFFFFF")
+define lucy = Character("Coordinator Lucy Pyre", who_color="#e7e5f2")
+define comm1 = Character("Commentator Mike", who_color="#FFFFFF")
+define comm2 = Character("Commentator Mick", who_color="#FFFFFF")
+define nimi = Character("Hostess Nimi Nightmare", who_color="#b2c6e4")
+define radio = Character("Mysterious Radio Voice", who_color="#FFFFFF")
+define bao = Character("Rocket Scientist Bao the Whale", who_color="#b2c6e4")
+define dragoonengi = Character("Dragoon Engineer", who_color="#fee5ad")
+define neuro = Character("President Neuro-sama", who_color="#6ce0d8")
+define dragoonassist = Character("Dragoon Assistant", who_color="#fee5ad")
 
 #Transition and Transform definitions
 
@@ -35,12 +36,12 @@ transform centre:
     zoom 0.75
     
 transform slightleft:
-    xalign 0.10
+    xalign 0.15
     yalign 0.5
     zoom 0.75
     
 transform slightright:
-    xalign 0.90
+    xalign 0.85
     yalign 0.5
     zoom 0.75
     
@@ -48,6 +49,11 @@ transform dokicentre:
     xalign 0.5
     yalign 0.3
     zoom 1.1
+    
+transform dragooncentre:
+    xalign 0.6
+    yalign 0.3
+    zoom 0.75
 
 # The game starts here.
 label start:
@@ -68,6 +74,20 @@ label start:
 
     doki "Hello everybody!{p}Welcome to today\'s stream!"
     
+    chat "Hi Doki{nw=0.5}"
+    chat "Hello Doki{nw=0.5}"
+    chat "Where\'s Dokikitty?{nw=0.5}"
+    chat "May we has loop?{nw=0.5}"
+    chat "👏👏👏{nw=0.5}"
+    chat "DO DO DO..DODODO DOKI DO DO DO DODOD DOKI{nw=0.5}"
+    chat "🎸🎸🎸🎸🎸🎸{nw=0.5}"
+    chat "🎸🎼🎶🎵🎶{nw=0.5}"
+    chat "Zen is literally playing Peak right now lol{nw=0.6}"
+    chat "Heeeeey{nw=0.5}"
+    chat "hello dokster{nw=0.5}"
+    chat "Hell yea good timing. just got out of work"
+    
+    
     scene bg kitchen with fade
      
     show dad smile at centre
@@ -82,7 +102,7 @@ label start:
     
     dad "{i}I returned with the newspaper and placed it down on the kitchen table."
     dad "{i}As I eat breakfast I look at the cover of the newspaper, and I notice something. {p}It\'s a job advertisement for Dooby\'s Pizza Express."
-    dad "Hmmm... with Doki streaming all the time I don\'t have much to do, working at a pizza place sounds like fun."
+    dad "Hmmm... With Doki streaming all the time I don\'t have much to do. Working at a pizza place sounds like fun."
 
     ############################# ACT 2 - Dooby's Pizza Express #####################################
 
@@ -93,7 +113,7 @@ label start:
     dad "{i}Somehow I got the interview that morning so I headed over. Everyone was patting me, it was like they never saw a dog before!"
   
     show dad smile: 
-        linear 0.5 xpos 0.20
+        linear 0.5 xpos 0.25
     show dooby happy at slightright with charfade 
   
     dooby "Well, I\'m very impressed with your resume, I\'m happy to offer you a position at my pizza place!"
@@ -133,7 +153,7 @@ label start:
     
     dad "*Mouth full of pizza* *Munching sounds*"
     dad "Mmmmmmmmm. {w}Working at a pizza place is really fun! {w}The pizza here is so delicious!"
-    dad "Plus you get free pizza too!  ... This is free right?"
+    dad "Plus you get free pizza too! {w}... {w}This is free right?"
     
     show dad smile
     show mint happy
@@ -162,7 +182,7 @@ label start:
     
     show dooby smile with vpunch
     
-    dad "Wait... how, where, who, why, when, also what? I just ate pizza!?"
+    dad "Wait... How, where, who, why, when, also what? I just ate pizza!?"
     
     show dooby happy
     
@@ -171,7 +191,7 @@ label start:
     show dad happy
     show dooby smile
     
-    dad "If that\'s the case... when do I start?"
+    dad "If that\'s the case... When do I start?"
 
     show dad smile
     show dooby happy
@@ -193,7 +213,7 @@ label start:
     
     show dad suitsmile at slightleft with charfade
     
-    dad "{i}I made myself comfortable clicked around the computer and I ended up scrolling through LeashedIn."
+    dad "{i}I made myself comfortable clicked around the computer and I ended up scrolling through Leashed-In."
     dad "{i}A notification reminder popped up for a management meeting in Xoom starting in a few minutes."
     dad "{i}It\'s normally pretty difficult for me to use a human mouse, but I took out my pawdapter I always carry with me, and attached it, joining the meeting without issue."
     
@@ -251,7 +271,7 @@ label start:
     
     show chibi smile
     
-    nic "That’s good to hear, the coffee machines have been working… erratically for a bit now. {w}I need my coffee! {w}You don’t want to see me without my coffee."
+    nic "That’s good to hear, the coffee machines have been working... erratically for a bit now. {w}I need my coffee! {w}You don’t want to see me without my coffee."
 
     show chibi happy
     
@@ -260,7 +280,7 @@ label start:
     show chibi smile
     show dad suithappy
 
-    dad "I do have a question to ask if I may?"
+    dad "I have a question to ask, if I may?"
     
     show dad suitsmile
     show chibi happy
@@ -281,7 +301,7 @@ label start:
     
     pancake "{cps=50}As Chief Catering Manager, I will require Requisition Form 12A {cps=60}filled out in quadruplicate with alternating letters in italics and bold, {cps=70}the Provision Permission Slip filled out triplicate in {cps=80}blue, red, and deep purple ink and {cps=90}a digital copy with each letter in a{w=0.10}{nw}" 
     pancake "{cps=100}randomly chosen font, the Workplace Hygiene Form {cps=105}filled out using a quill and ink, the Food Safety & Handling Certificate {cps=110}stamped, and verified by a JP, signed and seasoned with the finest Himalayan sea salt, {cps=120}a Valid Permit for the Request of Permits filled out{w=0.10}{nw}"
-    pancake "{cps=130}in a mix of Gaelic and Flat German, {cps=140}the Proof of Edibility Authenticity Certificate {cps=150}typed up using a vintage typewriter, specifically a Olivetti Lettera 32 version a5x {cps=10}aaaand... {cps=160}the updated version of the Food Safety Matrix on my desk by yesterday at sundown."
+    pancake "{cps=130}in a mix of Gaelic and Flat German, {cps=140}the Proof of Edibility Authenticity Certificate {cps=150}typed up using a vintage typewriter, specifically a Olivetti Lettera 32 version a5x {cps=10}aaaand... {cps=160}The updated version of the Food Safety Matrix on my desk by yesterday at sundown."
 
     gil "Oh also, as acting Chief Legal Coordinator all actions must also be in full compliance with how"
     gil "{cps=140}Article 14 Section 9 Subsection 15 Paragraph 5, Article 17 Section 15 Subsection 21 Paragraphs 7 and 10, Article 23 Section 7 Subsection 29 Paragraph 4, Sections 15, 16, 17, and 21 of the Food Safety Handling Act and the Law Compliance {cps=10}Simplification Act." 
@@ -289,7 +309,7 @@ label start:
     
     show dad suithappy
     
-    dad "Uhhhhhhhhhhhhhhhhhhhhhhhhhh. Okay… where can I get the salt from?"
+    dad "Uhhhhhhhhhhhhhhhhhhhhhhhhhh. Okay... where can I get the salt from?"
     
     show dad suitsmile
     
@@ -299,7 +319,7 @@ label start:
     
     show chibi happy
     
-    chibi "Anything other business from the floor?"
+    chibi "Any other business from the floor?"
 
     show chibi smile
     
@@ -343,7 +363,7 @@ label start:
 
     dad "{i}I just nod in agreement pretending to know what i’m doing."
     
-    chibi "Actually… {w}There was something I was going to offer to Dooby but she’s not here today for some reason…"
+    chibi "Actually... {w}There was something I was going to offer to Dooby but she’s not here today for some reason..."
     
     dad "{i}I wonder why."
     
@@ -354,8 +374,8 @@ label start:
     
     dad "Oh nice awesome that\'s great, when is it?"
 
-    show dad suithappy
-    show chibi smile
+    show dad suitsmile  
+    show chibi happy
     
     chibi "Like in half an hour. You better get going!"
     chibi "Oh the event organisers sent a free mystery merch coupon you can pick it up at check-in."
@@ -364,7 +384,7 @@ label start:
     
     scene bg progameoutside with fadeslow
     
-    show dad smile at slightleft with charfade
+    show dad jerseysmile at slightleft with charfade
     
     dad "{i}I get to the tournament a few minutes before the event started. I\'m not sure who\'s playing or even what game they\'re playing, but I don\'t know what to do as a manager, so I guess I\'ll do this."
     dad "{i}I figure I should get into the spirit of thing so, I pull on the free player jersey I got in my mystery box at the merch counter."
@@ -375,17 +395,22 @@ label start:
     lucy "{size=+15}Where the fuck were you?!{/size} We\'ve been looking all over for you! You\'re meant to be playing in a few minutes!"
     
     show lucy stressed
-    show dad worriedtalking
+    show dad jerseytalking
     
     dad "What do you mean? I\'m just here as a vie-"
     dad "{i}Before i’m able to finish my sentence she drags me by my collar into the arena."
     dad "Wait a secon-"
+    
+    show lucy stressedtalking
+    show dad jerseysmile
     
     lucy "{size=+15}You {/size}wait a second, you gotta have some balls to show up so late in the finals! Do you know how long I\'ve been running around looking for you? {size=+15}People are waiting to see you live!"
 
     dad "{i}I realise that there\'s no arguing with this woman, so I just go along with her, as my attempt to break away fails. {w} I try to follow as best I can."
     
     scene bg progameinside with fadeslow
+    
+    show dad jerseysmile at centre with charfade
     
     play sound "clapbig1.mp3"
     
@@ -396,7 +421,7 @@ label start:
     dad "{i}I have no clue what the commentators are talking about, I\'ve never played the game before, but I guess I'm a natural. Maybe all those hours of watching Doki play helped me somehow."
     
     comm1 "{cps=100}Well regardless of what happened, D.A.D. is now going straight to the international competition! Let\'s have a big round of applause!"
-    
+ 
     play sound "clapbig2.mp3"
     
     scene bg plane with fadeslow
@@ -448,7 +473,7 @@ label start:
     show dad worried
     show nimi worriedtalking
     
-    nimi "But… But… How… You\'re a dog? How can you fly…?"
+    nimi "But... But... How... You\'re a dog? How can you fly...?"
     
     show dad worriedtalking
     show nimi worried
@@ -466,7 +491,7 @@ label start:
 
     show dad worried at centre with charfade
 
-    dad "{i}I enter the cockpit and see two women in pilot uniform passed out, and… a snail sitting on the shoulder of one of them?"
+    dad "{i}I enter the cockpit and see two women in pilot uniform passed out, and... a snail sitting on the shoulder of one of them?"
     dad "{i}I jump on the lap of the woman who appears to be the main pilot and look at the controls in front of me."
     
     show dad worriedtalking
@@ -479,7 +504,7 @@ label start:
     dad "{i}I don\'t know what it does but, it\'s sure to do something."
     dad "{i}So I boop it. {w}I feel the plane begin to level out of its dive."
     
-    show nimi happytalking behind dad with charfade :
+    show nimi happy behind dad with charfade :
         xalign 0.7
         yalign 0.5
         zoom 0.75
@@ -490,7 +515,7 @@ label start:
     
     nimi "Well D.A.D., you keep doing what you’re doing here, I need to go back to my station in case any passengers need help. I\'m not sure why none of them have woken up at all."
     
-    hide nimi happytalking with charfade
+    hide nimi with charfade
     
     dad "{i}I just nod, eyes fixed on what's I think is the plane\'s spirit level, and keeping it steady.  Occasionally, I check my position on the map on one of the screens and follow the big red line, hoping it\'s taking us to our destination."
 
@@ -508,80 +533,80 @@ label start:
     
     dad "{i}I hastily look around the cockpit again and notice that the two women are both wearing gaming headsets or something. {w}I\'ve seen Doki wear something like it in her streams so I pluck the thing off one of the women\'s head and put it on."
     
-    show dad worriedheadset
+    show dad headset
    
     dad "{i} I immediately hear the very panicked voice of a human shouting into the mic."
     
     radio "DOKIWINGS FLIGHT 5248 COME IN. I REPEAT. DOKIWINGS FLIGHT 5248 COME IN. THIS IS AIR TRAFFIC CONTROL. PLEASE. IS ANYONE THERE."
     
-    show dad worriedheadsettalking
+    show dad headsettalking
     
     dad "Geez calm down, I’m here whats up? Whats an air trafficky controller thingy. Is that food?"
     
-    show dad worriedheadset
+    show dad headset
     
     radio "CALM DOWN!? {w}YOU WERE DIVING TOWARDS THE GROUND EARLIER!!! {w}HOW CAN ANYONE REMAIN CALM IN THIS SITUATION??? {w}Thank god someone responded, I thought the plane was going to crash!!! {w}What in the name of Dokiville is going on???"
 
-    show dad worriedheadsettalking
+    show dad headsettalking
         
-    dad "Wellllll… the flying people passed out and I pressed some buttons and fiddled around with the stick thing and the plane flew itself! Fascinating stuff this all is, a lot more exciting than the simulator stuff on the computer."
+    dad "Wellllll... the flying people passed out and I pressed some buttons and fiddled around with the stick thing and the plane flew itself! Fascinating stuff this all is, a lot more exciting than the simulator stuff on the computer."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "Wait, who are you??? What are you doing in the cockpit!? What do you want? Don\'t crash the plane!!!"
     
-    show dad worriedheadsettalking
+    show dad headsettalking
     
     dad "Chill out, I’m not gonna crash the plane. {w}I’m D.A.D, I’m a dog."
     dad "I was on the plane and the food-serving human came around saying that there was an emergency because the flying people passed out and there was no one able to fly the plane because everyone else was asleep."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "W- w- w- what??? H- h- h- How? Y- you know what, forget I asked, do you know how to land the plane? The plane only has so much fuel and if you don\'t land soon, it\'ll crash and you\'ll all be pancakes!"
     
-    show dad worriedheadsettalking
+    show dad headsettalking
     
-    dad "Ooh nom nom nom panacakes… *cough* wait… What do you mean fuel? I thought the plane just ran on plane energy or wind or something?"
+    dad "Ooh nom nom nom panacakes... *cough* wait... What do you mean fuel? I thought the plane just ran on plane energy or wind or something?"
     
-    show dad worriedheadset
+    show dad headset
     
     radio "If you don\'t do something the plane is going to crash. So listen to me and listen carefully. I\'ll explain how to fly the plane. You said you\'ve been in a simulator before right?"
     
-    show dad worriedheadsettalking
+    show dad headsettalking
     
     dad "Uhhh a little bit I guess."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "So do you know how to use the autopilot feature and the flaps and throttle and all that stuff?"
 
-    show dad worriedheadsettalking
+    show dad headsettalking
 
     dad "Wut..."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "Well this is going to be difficult. Is the autopilot on? It should be a red button on the stick thing in front of you."
     
-    show dad worriedheadsettalking
+    show dad headsettalking
     
     dad "I think it is? I pressed it earlier and the plane just flew straight."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "Ok very good, I need you to find a knob labelled direction heading, {w}{cps=20}d-i-r-e-c-t-i-o-n h-e-a-d-i-n-g {cps=0}and turn it to 330 degrees. {w}It should be in front of you. I have you on radar, I\'ll vector you in."
 
-    show dad worriedheadsettalking
+    show dad headsettalking
 
     dad "The knobbly thing that I can barely turn with my paws?"
     
     radio "Yup, that’ll be it."
     
-    show dad worriedheadsettalking
+    show dad headsettalking
 
     dad "Uhhh ok got it."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "Ok, I\'ll walk you through how to slow down the plane and activate all the stuff it needs to land."
     
@@ -589,44 +614,44 @@ label start:
     pause 2.0
     scene bg planecockpit with fade 
     
-    show dad worriedheadsettalking at centre
+    show dad headsettalking at centre
     show rin sleep at slightleft
     show lime sleep at slightright
     
     dad "Wait, I see the airport in the distance I think! There's a bunch of lights."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "Alright good, you\'re doing really well D.A.D, I\'m proud of you. Let\'s bring this plane home."
     
-    show dad worriedheadsettalking
+    show dad headsettalking
     
     dad "Planes have homes?"
     
-    show dad worriedheadset
+    show dad headset
     
     radio "Yep that\'s what an airport is basically. {w}Now you need to fully extend the flaps like we\'ve done before, and slow down the plane a bit more. {w}Keep on course descending for the runway."
     
-    show dad worriedheadsettalking
+    show dad headsettalking
     
     dad "Crap this is terrifying."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "You\'re doing good, keep focused."
     radio "In a moment, just before the plane touches down I need you to pull back on the yolk slightly and then pull the throttle all the way back. {w}You need to flare to slow down the plane\'s descent otherwise you\'ll slam the plane into the ground."
     
-    show dad worriedheadsettalking
+    show dad headsettalking
     
     dad "Ok, I\'ve got this I think."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "You\'re nearly here, I\'ve got emergency services on standby."
     
     dad "{i}I manage to land the plane and we eventually come to a stop."
     
-    show dad worriedheadset
+    show dad headset
     
     radio "Nice! That was an awesome landing, well done D.A.D.! You saved everyone and the plane! We\'re all cheering for you in the tower."
     
@@ -654,7 +679,7 @@ label start:
     show dad smile at slightleft
     with charfade
     
-    bao "Here we are! Behold… The Doki 5 rocket!" 
+    bao "Here we are! Behold... The Doki 5 rocket!" 
     
     show dad happy
     show bao smile
@@ -699,50 +724,50 @@ label start:
     
     scene bg nasaplatform with fade
     
-    show dragoonengi talking at centre with charfade
+    show dragoon distressedtalking at dragooncentre with charfade
     
     dragoonengi "😬⛔💨🥵👎🙅‍♂️🚀"
     
     show bao worriedtalking at slightright
     show dad worried at slightleft
     with charfade
-    show dragoonengi worried
+    show dragoon distressed
     
     bao "What\'s that? There\'s a blockage in the vent which is preventing the launch?"
     
-    show dragoonengi talking
+    show dragoon distressedtalking
     show bao worried
     
     dragoonengi "😨⌛🚀⏰🪟🛑📅‼️"
 
-    show dragoonengi worried
+    show dragoon distressed
     show bao worriedtalking
     
     bao "You\'re right! We don\'t have a lot of time before the launch and we can\'t afford to delay, it would set us back months! We could miss our once in forever launch window!"
 
-    show dragoonengi talking
+    show dragoon distressedtalking
     show bao worried
     
     dragoonengi "😱🔥💣‍🚀️💥💰💸💀"
 
-    show dragoonengi worried
+    show dragoon distressed
     show bao worriedtalking
     
     bao "WAIT WHAT!? Oh crap, that rocket costs billions! We don’t even have the budget to build another rocket!"
         
     dad "{i}I don\'t know a lot about those pointy things, but I do know that an explosion probably wouldn\'t be too good."
 
-    show dragoonengi worried
+    show dragoon distressed
     show bao worriedtalking
     
     bao "How do we fix this? We can\'t lose everything!"
 
-    show dragoonengi talking
+    show dragoon distressedtalking
     show bao worried
             
     dragoonengi "🤏🐕🛠️🐶🪛🚀🤞"
     
-    show dragoonengi worried
+    show dragoon distressed
     show bao worriedtalking
         
     bao "Oh! You’re saying that someone like a small dog could fit through and fix the problem?"
@@ -760,12 +785,12 @@ label start:
     
     dad "I think I fixed the problem, there was a giant tomato blocking the critical ventilation pathway."
 
-    show dragoonengi talking
+    show dragoon distressedtalking
     show dad smile
     
     dragoonengi "🤔🍅⁉️🤯"
     
-    show dragoonengi worried
+    show dragoon distressed
     show bao worriedtalking
     
     bao "How in the name of Dokiville did that get there?"
@@ -785,7 +810,7 @@ label start:
     
     dad "Oh cool! Nice."
     
-    hide dragoonengi with charfade
+    hide dragoon with charfade
     hide bao with charfade
     
     dad "{i}The rocket launch was beautiful and went without any further hiccups, the afternoon sun rays forming an impressive backdrop. (Source: Trust us.)"
@@ -799,97 +824,92 @@ label start:
     play sound "bigclap2.mp3"
     
     show neuro happy at slightright
-    show dad suit at slightleft with charfade
+    show dad suitsmile at slightleft with charfade
 
-    neuro "On behalf of this great country and under the powers given to me as President of Dokiland, I bestow upon you the Medal of Honour for your small size… Ahem, bravery and selfless service to our nation."
+    neuro "On behalf of this great country and under the powers given to me as President of Dokiland, I bestow upon you the Medal of Honour for your small size... Ahem, bravery and selfless service to our nation."
     
     scene bg beigehouse with fadeslow
     
     show neuro happy at slightright
-    show dad smile at slightleft with charfade
+    show dad suitsmile at slightleft with charfade
     
     neuro "Thank you again for your incredible work."
     
     show neuro smile
-    show dad happy
+    show dad suithappy
     
     dad "No worries, was pretty fun, and the tomato was kind of tasty too."
     
     show neuro happy
-    show dad smile
+    show dad suitsmile
     
     neuro "I would like to ask you to lead my new department \"Management of Memology\"."
     
     show neuro smile
-    show dad happy
+    show dad suithappy
     
     dad "Cool. \"M.O.M. Department\" sounds like fun."
     
     show neuro happy
-    show dad smile
+    show dad suitsmile
     
     neuro "Great, here\'s your team please get to work right away."
     
     show neuro smile
-    show dad happy
+    show dad suithappy
         
     dad "No sweat."
 
     scene bg boardroom
     
-    show dragoonassist talking at slightright
+    show dragoon distressedtalking at slightright
     show dad worried at slightleft
     with charfade
     
     dragoonassist "🖼️💻😡⚠⚔️️"
     
     show dad worriedtalking
-    show dragoonassist worried
+    show dragoon distressed
     
     dad "Uh oh. That\'s very not good."
     
-    show dragoonassist talking
+    show dragoon distressedtalking
     show dad worried
     
     dragoonassist "🤬🪖💢🧑‍💻☢️"
     
     show dad worriedtalking
-    show dragoonassist worried
+    show dragoon distressed
     
-    dad "I didn\'t think posting that meme would cause this to happen! {w}Everyone loves that meme!  {w}Tell the nuclear command not to launch the nukes! {w}I repeat, DO NOT LAUNCH THE NUKES…"
+    dad "I didn\'t think posting that meme would cause this to happen! {w}Everyone loves that meme!  {w}Tell the nuclear command not to launch the nukes! {w}I repeat, DO NOT LAUNCH THE NUKES..."
     
-    show dragoonassist talking
+    show dragoon distressedtalking
     show dad worried
     
     dragoonassist "⌛🫣☢️💥🫠☠️"
     
     show dad worriedtalking
-    show dragoonassist worried
+    show dragoon distressed
     
-    dad "I KNOW, I KNOW! {w}Let me think! Oh gosh how do we solve this… {w}Wait. {p}I know! I’ll call Doki for help."
+    dad "I KNOW, I KNOW! {w}Let me think! Oh gosh how do we solve this... {w}Wait. {p}I know! I’ll call Doki for help."
     
     show dad worried
 
     play sound "phone.mp3"
     
-    show doki worriedtalking at dokicentre
-    
     doki "D.A.D.??? {w}Where are you??? {w}What\'s going on??? {w}Why are you calling me from the other room...{w} How are you calling me???"
 
-    show doki worried
     show dad worriedtalking
 
     dad "Well actually I’m at the Beige House, and there’s a bit of a memergency. Check your feed."
     
-    show doki worriedtalking
     show dad worried
     
-    doki "WHAT THE FUCK DAD. HOW DID THIS HAPPEN? WHAT EVEN… HOW… WHAT… WHY… PLEASE EXPLAIN???"
+    doki "WHAT THE FUCK DAD. HOW DID THIS HAPPEN? WHAT EVEN... HOW... WHAT... WHY... PLEASE EXPLAIN???"
 
-    show doki worried
     show dad worriedtalking
 
-    dad "Well its a long story… {p}It all started when…"
+    dad "Well its a long story... {p}It all started when..."
     
     jump start
     
